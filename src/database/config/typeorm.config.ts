@@ -2,6 +2,7 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { config } from 'dotenv';
 import envFilePath from 'envs/env';
 import * as path from 'path';
+import { SeederOptions } from 'typeorm-extension';
 
 config({ path: envFilePath });
 
@@ -15,15 +16,23 @@ export const dataSourceOptions: DataSourceOptions = {
   schema: process.env.DB_SCHEMA,
   logging: false,
   synchronize: false,
-  // entities: [__dirname + '/../../**/*.entity.{js,ts}'],
   entities: [
-    path.resolve(
-      __dirname,
-      '../../../domain/static-board/entities/*.entity.{js,ts}',
-    ),
+    path.resolve(__dirname, '../../domain/**/entities/*.entity.{js,ts}'),
   ],
   migrations: [path.join(__dirname, '../migrations/*.ts')],
   migrationsTableName: 'migrations',
 };
 
-export const datasource = new DataSource(dataSourceOptions);
+const seederOptions: SeederOptions = {
+  seeds: [
+    'src/database/seeds/*.seed.{js,ts}',
+    'src/domain/*/seeds/*.seed.{js,ts}',
+  ],
+  factories: ['src/domain/*/seeds/*.factory.{js,ts}'],
+};
+
+//AppDataSource.options 에 포함된 모든 객체
+export const AppDataSource = new DataSource({
+  ...dataSourceOptions,
+  ...seederOptions,
+});

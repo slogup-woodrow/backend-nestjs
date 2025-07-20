@@ -7,8 +7,8 @@ import { StaticBoardController } from './controllers/static-board.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([StaticBoard])],
-  providers: [StaticBoardService, StaticBoardRepository],
   controllers: [StaticBoardController],
+  providers: [StaticBoardService, StaticBoardRepository],
   exports: [],
 })
 export class StaticBoardModule {}

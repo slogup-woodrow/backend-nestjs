@@ -6,7 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi';
 import envFilePath from 'envs/env';
 import { commonConstants } from './shared/constants/common.constants';
-import { dataSourceOptions } from './shared/database/config/typeorm.config';
+import { AppDataSource } from './database/config/typeorm.config';
 import { StaticBoardModule } from './domain/static-board/static-board.module';
 @Module({
   imports: [
@@ -20,7 +20,7 @@ import { StaticBoardModule } from './domain/static-board/static-board.module';
         TZ: Joi.string().valid('Asia/Seoul').required(),
       }),
     }),
-    TypeOrmModule.forRoot(dataSourceOptions),
+    TypeOrmModule.forRoot(AppDataSource.options),
     //JWT
     StaticBoardModule,
   ],

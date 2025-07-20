@@ -1,7 +1,7 @@
 import { BeforeInsert, BeforeUpdate, Column, Entity, Index } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
-import { CoreSoftEntity } from '../../../shared/database/entity/core-soft.entity';
+import { CoreSoftEntity } from '../../../database/entity/core-soft.entity';
 import {
   IsCustomBoolean,
   IsCustomDate,
