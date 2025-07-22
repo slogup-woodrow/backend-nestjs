@@ -1,4 +1,4 @@
-import { launchAppAndGetTestAppAndDb } from 'test/utils/e2e-test.util';
+import { launchAppAndGetTestAppAndDb } from 'test/utils/e2e-helper';
 import { StaticBoardFixture } from '../fixtures/static-board.fixture';
 import { generateStaticBoardMockDto } from '../mocks/static-board.mock';
 import { HttpStatus } from '@nestjs/common';
