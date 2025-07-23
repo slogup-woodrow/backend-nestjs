@@ -1,7 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
-import { Response } from 'supertest';
-
+import request, { Response } from 'supertest';
 export class StaticBoardFixture {
   static async generateStaticBoard(
     app: INestApplication,
