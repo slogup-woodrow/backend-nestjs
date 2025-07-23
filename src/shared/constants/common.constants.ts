@@ -15,7 +15,7 @@ const languages = {
 const LANGUAGE_ARRAY = Object.values(languages);
 
 export const commonConstants = {
-  props: { nodeEnvs, NODE_ENV_ARRAY },
+  props: { nodeEnvs, NODE_ENV_ARRAY, languages },
   errorMessages: {
     COMMON_ERROR_MESSAGE_BEARER_TOKEN_NEEDED: {
       errorCode: 'COMMON_ERROR_MESSAGE_BEARER_TOKEN_NEEDED',

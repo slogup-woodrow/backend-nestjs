@@ -41,12 +41,16 @@
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
     "dotenv": "^17.2.0",
+    "express-basic-auth": "^1.2.1",
     "joi": "^17.13.3",
+    "lodash": "^4.17.21",
+    "nest-winston": "^1.10.2",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.25",
-    "typeorm-extension": "^3.7.1"
+    "typeorm-extension": "^3.7.1",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

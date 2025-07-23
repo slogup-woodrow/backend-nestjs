@@ -8,6 +8,9 @@ import envFilePath from 'envs/env';
 import { commonConstants } from './shared/constants/common.constants';
 import { AppDataSource } from './database/config/typeorm.config';
 import { StaticBoardModule } from './domain/static-board/static-board.module';
+import { WinstonModule } from 'nest-winston';
+import * as winston from 'winston';
+import { getStringifiedDateTypeA } from './shared/helpers/date.helper';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,6 +24,18 @@ import { StaticBoardModule } from './domain/static-board/static-board.module';
       }),
     }),
     TypeOrmModule.forRoot(AppDataSource.options),
+    WinstonModule.forRoot({
+      transports: [
+        new winston.transports.Console({
+          level: 'silly',
+          format: winston.format.combine(
+            winston.format.timestamp({
+              format: () => getStringifiedDateTypeA(),
+            }),
+          ),
+        }),
+      ],
+    }),
     //JWT
     StaticBoardModule,
   ],

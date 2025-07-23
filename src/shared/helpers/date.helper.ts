@@ -44,7 +44,9 @@ export const transformStringToDateEnd = function (stringDate: string): Date {
 /**
  * YYYY-MM-DD HH:mm:ss와 같은 형태의 stringifiedDate를 반환
  */
-// export const getStringifiedDateTypeA = function (date = new Date()): string {};
+export const getStringifiedDateTypeA = function (date = new Date()): string {
+  return dayjs(date).format('YYYY-MM-DD HH:mm:ss');
+};
 
 /**
  * YYYYMMDD_HHmmss와 같은 형태의 stringifiedDate를 반환

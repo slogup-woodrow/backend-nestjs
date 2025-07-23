@@ -7,9 +7,7 @@ export const swaggerConstants = {
     SWAGGER_DESCRIPTION: 'Anonymous app API Document',
     SWAGGER_VERSION: '1.0',
   },
-  tags: {
-    BUILTIN_BOARD: '[템플릿] CRUD-게시판',
-  },
+  tags: {},
   auth: {
     BEARER_TOKEN: 'bearer-token',
   },
